@@ -13,6 +13,7 @@ import {
   Eye,
   Share2
 } from "lucide-react";
+import Footer from "../../components/Footer/Footer";
 
 export default function Story() {
   // ==========================================
@@ -553,7 +554,7 @@ const handleRequest =
 )}
 
       </main>
-
+<Footer />
     </div>
   );
 }

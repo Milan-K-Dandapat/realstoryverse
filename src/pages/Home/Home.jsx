@@ -5,7 +5,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import "../../components/Navbar/Navbar.css";
 import { Sparkles, Compass,Eye, Heart, Smile, Ghost, Flame } from "lucide-react";
 import AdBanner from "../../components/AdBanner/AdBanner";
-
+import Footer from "../../components/Footer/Footer";
 
 export default function Home() {
   const [stories, setStories] = useState([]);
@@ -363,6 +363,7 @@ setContinueWatching(
           </a>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
