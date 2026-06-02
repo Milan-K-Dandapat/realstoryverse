@@ -1,0 +1,26 @@
+/* =========================================
+   REAL STORYVERSE - THEATRE MODE CSS
+   (Layout & Colors are handled by Tailwind)
+========================================= */
+
+@keyframes theatreFadeIn {
+  0% {
+    opacity: 0;
+    filter: blur(20px);
+    transform: translateY(30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-theatre-enter {
+  animation: theatreFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Ensure the background stays locked to that deep dark premium color */
+body {
+  background-color: #030305;
+}

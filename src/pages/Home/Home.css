@@ -1,0 +1,52 @@
+/* =========================================
+   REAL STORYVERSE - PREMIUM CSS
+========================================= */
+
+/* 1. Import Premium Font (Plus Jakarta Sans) */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+
+/* Apply font globally to the component */
+.custom-font {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* 2. Hide Scrollbars for horizontal scrolling (Category Chips) */
+.scrollbar-hide::-webkit-scrollbar { 
+    display: none; 
+}
+.scrollbar-hide { 
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;    /* Firefox */
+}
+
+/* 3. Custom Animations */
+/* Shimmer effect for the loading skeletons */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% { 
+    transform: translateX(100%); 
+  }
+}
+
+/* Fade in effect for the whole page load */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-container {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 4. Global smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+}
+
+/* ===========================
+   FULL PAGE
+=========================== */
+
+.admin-login-page{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  position:relative;
+
+  background:
+  radial-gradient(circle at top left,#2e1065 0%,transparent 35%),
+  radial-gradient(circle at top right,#1e3a8a 0%,transparent 35%),
+  radial-gradient(circle at bottom,#831843 0%,transparent 40%),
+  #050816;
+}
+
+/* ===========================
+   FLOATING ORBS
+=========================== */
+
+.floating-orb{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(80px);
+  opacity:.35;
+  animation:float 10s infinite ease-in-out;
+}
+
+.orb1{
+  width:300px;
+  height:300px;
+  background:#7c3aed;
+  top:-100px;
+  left:-80px;
+}
+
+.orb2{
+  width:250px;
+  height:250px;
+  background:#2563eb;
+  bottom:-50px;
+  right:-80px;
+  animation-delay:2s;
+}
+
+.orb3{
+  width:220px;
+  height:220px;
+  background:#ec4899;
+  top:50%;
+  left:70%;
+  animation-delay:4s;
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.login-card{
+  width:100%;
+  max-width:470px;
+
+  background:rgba(255,255,255,.06);
+
+  backdrop-filter:blur(25px);
+
+  border:1px solid rgba(255,255,255,.12);
+
+  border-radius:30px;
+
+  padding:45px 35px;
+
+  position:relative;
+  z-index:10;
+
+  box-shadow:
+  0 20px 60px rgba(0,0,0,.45);
+
+  animation:cardFade .8s ease;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.logo-area{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.logo-area h1{
+  font-size:2rem;
+  font-weight:800;
+
+  background:linear-gradient(
+    90deg,
+    #ffffff,
+    #c084fc,
+    #60a5fa
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  letter-spacing:1px;
+}
+
+.logo-area p{
+  color:#a1a1aa;
+  margin-top:8px;
+  font-size:.95rem;
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+.login-form{
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+}
+
+.input-group{
+  display:flex;
+  flex-direction:column;
+}
+
+.input-group label{
+  margin-bottom:8px;
+  color:#e4e4e7;
+  font-size:.95rem;
+}
+
+.input-group input{
+  width:100%;
+  padding:15px 18px;
+
+  border:none;
+
+  border-radius:15px;
+
+  background:rgba(255,255,255,.08);
+
+  color:white;
+
+  outline:none;
+
+  transition:.3s;
+}
+
+.input-group input:focus{
+  border:1px solid #8b5cf6;
+
+  box-shadow:
+  0 0 20px rgba(139,92,246,.3);
+}
+
+.input-group input::placeholder{
+  color:#9ca3af;
+}
+
+/* ===========================
+   PASSWORD BOX
+=========================== */
+
+.password-box{
+  position:relative;
+}
+
+.password-box input{
+  padding-right:90px;
+}
+
+.toggle-btn{
+  position:absolute;
+  right:10px;
+  top:50%;
+  transform:translateY(-50%);
+
+  border:none;
+
+  background:transparent;
+
+  color:#a78bfa;
+
+  cursor:pointer;
+
+  font-weight:600;
+}
+
+/* ===========================
+   ERROR
+=========================== */
+
+.error-box{
+  padding:14px;
+
+  background:
+  rgba(239,68,68,.15);
+
+  border:
+  1px solid rgba(239,68,68,.3);
+
+  color:#fca5a5;
+
+  border-radius:12px;
+
+  text-align:center;
+}
+
+/* ===========================
+   LOGIN BUTTON
+=========================== */
+
+.login-btn{
+  border:none;
+
+  padding:16px;
+
+  border-radius:16px;
+
+  background:linear-gradient(
+    90deg,
+    #7c3aed,
+    #2563eb
+  );
+
+  color:white;
+
+  font-size:1rem;
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.35s;
+
+  box-shadow:
+  0 0 25px rgba(124,58,237,.4);
+}
+
+.login-btn:hover{
+  transform:
+  translateY(-3px)
+  scale(1.02);
+
+  box-shadow:
+  0 10px 35px rgba(124,58,237,.55);
+}
+
+.login-btn:disabled{
+  opacity:.7;
+  cursor:not-allowed;
+}
+
+/* ===========================
+   FOOTER TEXT
+=========================== */
+
+.bottom-text{
+  text-align:center;
+  margin-top:25px;
+
+  color:#9ca3af;
+
+  font-size:.9rem;
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+@keyframes float{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-40px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+}
+
+@keyframes cardFade{
+
+  from{
+    opacity:0;
+    transform:
+    translateY(30px)
+    scale(.95);
+  }
+
+  to{
+    opacity:1;
+    transform:
+    translateY(0)
+    scale(1);
+  }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:600px){
+
+  .login-card{
+    margin:20px;
+    padding:35px 25px;
+  }
+
+  .logo-area h1{
+    font-size:1.6rem;
+  }
+
+  .login-btn{
+    padding:15px;
+  }
+}
