@@ -69,7 +69,7 @@ const getYoutubeEmbedUrl = (url) => {
     videoId = url.split("/embed/")[1];
   }
 
-  return `https://www.youtube.com/embed/${videoId}`;
+  return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&playsinline=0`;
 };
 useEffect(() => {
 
@@ -308,45 +308,13 @@ const handleRequest =
         <div className="xl:col-span-2 flex flex-col">
           {/* THEATRE PLAYER */}
           <div className="w-full aspect-video bg-black rounded-xl border border-white/10 overflow-hidden shadow-2xl shadow-black/80 relative">
-            <iframe
-              src={getYoutubeEmbedUrl(story.youtubeUrl)}
-              onLoad={() => {
-
-  const watchedStories =
-    JSON.parse(
-      localStorage.getItem(
-        "continueWatching"
-      ) || "[]"
-    );
-
-  const exists =
-    watchedStories.find(
-      (item) =>
-        item.id === story.id
-    );
-
-  if (!exists) {
-
-    watchedStories.unshift({
-      id: story.id,
-      title: story.title,
-      thumbnail:
-        story.thumbnail
-    });
-
-    localStorage.setItem(
-      "continueWatching",
-      JSON.stringify(
-        watchedStories.slice(0, 10)
-      )
-    );
-  }
-
-}}
-              title={story.title}
-              className="w-full h-full absolute inset-0"
-              allowFullScreen
-            />
+<iframe
+  src={getYoutubeEmbedUrl(story.youtubeUrl)}
+  title={story.title}
+  className="w-full h-full absolute inset-0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+  allowFullScreen
+/>
           </div>
 {/* AD BANNER */}
 {false && (
