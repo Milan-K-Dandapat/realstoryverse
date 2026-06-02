@@ -72,18 +72,42 @@ const loadStories = async () => {
 
   setStories(data);
 };
-  const getYoutubeEmbedUrl = (url) => {
-    if (!url) return "";
+const getYoutubeEmbedUrl = (url) => {
+  if (!url) return "";
 
-    try {
-      const videoId =
-        url.split("v=")[1]?.split("&")[0];
+  try {
+    const parsedUrl = new URL(url);
 
-      return `https://www.youtube.com/embed/${videoId}`;
-    } catch {
-      return "";
+    let videoId = "";
+
+    if (
+      parsedUrl.hostname === "youtu.be"
+    ) {
+      videoId =
+        parsedUrl.pathname.slice(1);
+    } else if (
+      parsedUrl.pathname.includes(
+        "/shorts/"
+      )
+    ) {
+      videoId =
+        parsedUrl.pathname.split(
+          "/shorts/"
+        )[1];
+    } else {
+      videoId =
+        parsedUrl.searchParams.get(
+          "v"
+        );
     }
-  };
+
+    return videoId
+      ? `https://www.youtube.com/embed/${videoId}`
+      : "";
+  } catch {
+    return "";
+  }
+};
 
 const publishStory = async (e) => {
 
