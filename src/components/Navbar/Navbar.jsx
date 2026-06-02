@@ -57,7 +57,7 @@ stories.filter(
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-[9999] w-full box-border bg-[#030305]/95 backdrop-blur-2xl border-b border-white/[0.05]">
+      <header className="sticky top-0 left-0 right-0 z-[9999] w-full box-border bg-[#030305]/95 backdrop-blur-2xl border-b border-white/[0.05]">
         
         {/* Top Cinematic Highlight Line */}
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-rose-500/30 to-transparent"></div>

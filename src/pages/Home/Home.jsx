@@ -105,7 +105,7 @@ setContinueWatching(
       `}</style>
 
       <Navbar />
-      <div className="custom-font min-h-screen w-full max-w-[100vw] overflow-x-hidden bg-[#050508] text-[#f1f1f1] antialiased selection:bg-rose-500 selection:text-white relative pb-36 md:pb-0">
+      <div className="custom-font min-h-screen w-full max-w-[100vw] overflow-x-hidden bg-[#050508] text-[#f1f1f1] antialiased selection:bg-rose-500 selection:text-white relative pt-16 md:pt-20 pb-36 md:pb-0">
         
         {/* SPATIAL AMBIENT MESH GLOWS */}
         <div className="absolute top-[-15%] left-[-10%] w-[50vw] h-[50vw] max-w-[800px] max-h-[800px] bg-rose-600/10 rounded-full mix-blend-screen filter blur-[150px] pointer-events-none animate-float" style={{ animationDuration: '10s' }} />
@@ -130,10 +130,11 @@ setContinueWatching(
           </aside>
 
           {/* MAIN FEED SECTION */}
-          <main className="flex-1 min-w-0 px-4 sm:px-6 md:px-8 lg:px-12 pt-36 lg:pt-40 w-full box-border">
+      <main className="flex-1 min-w-0 px-4 sm:px-6 md:px-8 lg:px-12 w-full box-border pt-4">
            
             {featuredStory && (
-              <div className="mb-8 lg:mb-12 rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden border border-white/10 bg-gradient-to-br from-[#12121a]/90 to-[#0a0a0f]/90 backdrop-blur-2xl shadow-[0_10px_40px_rgba(0,0,0,0.5)] animate-fade-up relative group" style={{ animationDelay: '100ms' }}>
+  <div
+    className="mt-6 mb-8 lg:mb-12 rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden border border-white/10 bg-gradient-to-br from-[#12121a]/90 to-[#0a0a0f]/90 backdrop-blur-2xl shadow-[0_10px_40px_rgba(0,0,0,0.5)] animate-fade-up relative group" style={{ animationDelay: '100ms' }}>
                 <div className="flex flex-col lg:grid lg:grid-cols-2 relative z-10">
                   
                   {/* Image container */}
@@ -147,7 +148,7 @@ setContinueWatching(
                   </a>
 
                   {/* Text Container */}
-                  <div className="p-5 sm:p-8 lg:p-12 flex flex-col justify-end lg:justify-center relative z-20 -mt-28 sm:-mt-32 lg:mt-0">
+                  <div className="p-5 sm:p-8 lg:p-12 flex flex-col justify-end lg:justify-center relative z-20 lg:mt-0">
                     <div className="mb-3 lg:mb-5 flex items-center gap-3">
                       <span className="bg-white/10 text-rose-400 border border-rose-500/20 px-3 py-1.5 lg:px-3.5 lg:py-1.5 rounded-full text-[9px] lg:text-[10px] font-bold uppercase tracking-[0.15em] flex items-center gap-2 backdrop-blur-md">
                         <span className="w-1.5 h-1.5 bg-rose-500 rounded-full animate-pulse"></span>
