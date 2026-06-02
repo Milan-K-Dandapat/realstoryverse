@@ -130,7 +130,7 @@ setContinueWatching(
           </aside>
 
           {/* MAIN FEED SECTION */}
-          <main className="flex-1 min-w-0 px-4 sm:px-6 md:px-8 lg:px-12 pt-24 lg:pt-28 w-full box-border">
+          <main className="flex-1 min-w-0 px-4 sm:px-6 md:px-8 lg:px-12 pt-36 lg:pt-40 w-full box-border">
            
             {featuredStory && (
               <div className="mb-8 lg:mb-12 rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden border border-white/10 bg-gradient-to-br from-[#12121a]/90 to-[#0a0a0f]/90 backdrop-blur-2xl shadow-[0_10px_40px_rgba(0,0,0,0.5)] animate-fade-up relative group" style={{ animationDelay: '100ms' }}>
