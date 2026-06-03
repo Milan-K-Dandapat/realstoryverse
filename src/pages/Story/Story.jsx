@@ -57,19 +57,43 @@ useEffect(() => {
 const getYoutubeEmbedUrl = (url) => {
   if (!url) return "";
 
-  let videoId = "";
+  try {
+    const parsedUrl = new URL(url);
 
-  if (url.includes("watch?v=")) {
-    videoId = url.split("watch?v=")[1].split("&")[0];
-  }
-  else if (url.includes("youtu.be/")) {
-    videoId = url.split("youtu.be/")[1].split("?")[0];
-  }
-  else if (url.includes("/embed/")) {
-    videoId = url.split("/embed/")[1];
-  }
+    let videoId = "";
 
-  return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&playsinline=0`;
+    // youtu.be links
+    if (
+      parsedUrl.hostname === "youtu.be"
+    ) {
+      videoId =
+        parsedUrl.pathname.slice(1);
+    }
+
+    // shorts links
+    else if (
+      parsedUrl.pathname.includes(
+        "/shorts/"
+      )
+    ) {
+      videoId =
+        parsedUrl.pathname
+          .split("/shorts/")[1]
+          .split("?")[0];
+    }
+
+    // watch?v= links
+    else {
+      videoId =
+        parsedUrl.searchParams.get("v");
+    }
+
+    if (!videoId) return "";
+
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+  } catch {
+    return "";
+  }
 };
 useEffect(() => {
 
